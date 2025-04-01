@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Meu Amor ❤️</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe6e6;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        #mensagem {
+            display: none;
+            font-size: 20px;
+            margin-top: 20px;
+            color: #d6336c;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+        .heart {
+            font-size: 50px;
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Oi, meu amor! 💖</h2>
+        <p>Digite seu nome para receber uma mensagem especial:</p>
+        <input type="text" id="nome" placeholder="Seu nome aqui...">
+        <button onclick="verificarNome()">Enviar</button>
+        <p class="error" id="erro"></p>
+        <p id="mensagem">Te amo infinitamente! 💋💕<br><span class="heart">❤️</span></p>
+    </div>
+
+    <script>
+        function verificarNome() {
+            let nomeDigitado = document.getElementById("nome").value.trim();
+            let nomeCorreto = "Giovanna"; // 🔥 Troque pelo nome da sua esposa
+            let erro = document.getElementById("erro");
+            let mensagem = document.getElementById("mensagem");
+
+            if (nomeDigitado.toLowerCase() === nomeCorreto.toLowerCase()) {
+                erro.textContent = "";
+                mensagem.style.display = "block";
+            } else {
+                erro.textContent = "Nome errado! Coloca o certo. 😡";
+                mensagem.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
